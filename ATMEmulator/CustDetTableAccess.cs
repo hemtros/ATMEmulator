@@ -15,29 +15,32 @@ namespace ATMEmulator
         public void Sqlcon()
         {
             con = new SqlConnection();
-            con.ConnectionString = "Server=HSA-PC\\SQLEXPRESS; Database=ATM; Integrated Security=true";
+            con.ConnectionString = "Server=HSA-PC\\SQLEXPRESS; Database=ATM; Integrated Security=True";
 
 
         }
 
         public string QueryExe(Customer cs)
         {
-            string sqlstatement = "select Customer_Name from Customer_Details where PIC=@pic";
+            string sqlstatement = "select Name from Customer where Pic=@pic";
 
             SqlCommand cmd=new SqlCommand(sqlstatement,con);
             cmd.Parameters.AddWithValue("@pic", cs.Pic);
 
-            
+             
             string dataret=string.Empty;
             
             try
             {
+                SqlDataReader mydatareader = null;
                 con.Open();
-                SqlDataReader mydatareader= cmd.ExecuteReader();
-
-                while (mydatareader.Read())
+                 mydatareader= cmd.ExecuteReader();
+                
+                    
+               while (mydatareader.Read())
                 {
-                    dataret=mydatareader["Customer_Name"].ToString();
+                    
+                    dataret=mydatareader["Name"].ToString();
                     
                    
                     

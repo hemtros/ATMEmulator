@@ -27,15 +27,20 @@ namespace ATMEmulator
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var csta = new CustDetTableAccess();
-            csta.Sqlcon();
+            int pic = Convert.ToInt32(PICTextBox.Text);
             Customer cust = new Customer();
+            cust.Pic = pic;
+
+
+
             CustDetTableAccess cdta=new CustDetTableAccess();
             cdta.Sqlcon();
             string retcustname=cdta.QueryExe(cust);
-            cust.Name = retcustname;
             
-            EnterPincode ep=new EnterPincode(cust);
+            
+            
+            EnterPincode ep=new EnterPincode();
+            ep.Customername = retcustname;
             ep.Show();
             this.Dispose();
             

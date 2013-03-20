@@ -28,24 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.WelcomeTextBox = new System.Windows.Forms.Label();
+            this.WelcomeLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // WelcomeTextBox
+            // WelcomeLabel
             // 
-            this.WelcomeTextBox.AutoSize = true;
-            this.WelcomeTextBox.Location = new System.Drawing.Point(72, 77);
-            this.WelcomeTextBox.Name = "WelcomeTextBox";
-            this.WelcomeTextBox.Size = new System.Drawing.Size(13, 13);
-            this.WelcomeTextBox.TabIndex = 0;
-            this.WelcomeTextBox.Text = "d";
+            this.WelcomeLabel.AutoSize = true;
+            this.WelcomeLabel.Location = new System.Drawing.Point(72, 77);
+            this.WelcomeLabel.Name = "WelcomeLabel";
+            this.WelcomeLabel.Size = new System.Drawing.Size(0, 13);
+            this.WelcomeLabel.TabIndex = 0;
             // 
             // EnterPincode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(330, 310);
-            this.Controls.Add(this.WelcomeTextBox);
+            this.Controls.Add(this.WelcomeLabel);
             this.Name = "EnterPincode";
             this.Text = "Enter Pincode";
             this.Load += new System.EventHandler(this.EnterPincode_Load);
@@ -56,6 +55,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label WelcomeTextBox;
+        private System.Windows.Forms.Label WelcomeLabel;
     }
 }

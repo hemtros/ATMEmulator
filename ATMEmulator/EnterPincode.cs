@@ -12,21 +12,18 @@ namespace ATMEmulator
 {
     public partial class EnterPincode : Form
     {
-        private string customername;
+        public string Customername { get; set; }
         public EnterPincode()
         {
             InitializeComponent();
         }
 
-        public EnterPincode(Customer cust)
-        {
-            customername = cust.Name;
-        }
+       
          
         private void EnterPincode_Load(object sender, EventArgs e)
         {
-            Customer c=new Customer();
-            WelcomeTextBox.Text = "Welcome" + customername;
+
+            WelcomeLabel.Text = "Welcome " + this.Customername;
         }
     }
 }
